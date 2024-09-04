@@ -6,7 +6,9 @@ This project aims to develop desktop application with Electron that can connect 
 ## How to use
 
 Simply change the extension of your local MyHeritage database from .ftb to .sqlite and put the file into main folder. Now go to DB/manager.js and change database name:
-`const dbPath = path.resolve(__dirname, "../[your DB name].sqlite");`
+```
+const dbPath = path.resolve(__dirname, "../[your DB name].sqlite");
+```
 
 ## Versions and Further Development
 
