@@ -129,7 +129,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# db
-.sqlite
-.db
-.db3
+# db files
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.db
+*.db3
