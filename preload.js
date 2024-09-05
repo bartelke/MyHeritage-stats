@@ -1,9 +1,9 @@
 const familyMgr = require("./DB/family.js");
 const { contextBridge } = require("electron");
 
-const getNames = () => {
-  return familyMgr.getTestData();
+const getNamesRep = () => {
+  return familyMgr.countNamesRepetition();
 };
 contextBridge.exposeInMainWorld("api", {
-  getNames: getNames,
+  getNamesRepetition: getNamesRep,
 });
