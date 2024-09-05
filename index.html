@@ -11,13 +11,17 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
-    <title>Hello from Electron renderer!</title>
+    <title>MyHeritage statistics</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Hello from Electron renderer!</h1>
-
-    <div id="familyData"></div>
+    <div id="app">
+      <div class="names-container">
+        <h2>Names and Occurrences</h2>
+        <ul id="names-list"></ul>
+      </div>
+    </div>
     <script src="renderer.js"></script>
-    <p>👋</p>
+    <script src="scripts/NamesRepetition.js"></script>
   </body>
 </html>

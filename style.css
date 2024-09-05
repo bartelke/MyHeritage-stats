@@ -1,0 +1,53 @@
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li:nth-child(odd) {
+  background-color: #bdcdd6;
+}
+
+.names-container {
+  margin: 20px;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  max-width: 400px;
+  background-color: #f9f9f9;
+}
+
+/* Section title */
+.names-container h2 {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Delete default list styles */
+#names-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* names repetition (li) */
+.names-list {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  color: #000000;
+}
+
+.names-list:last-child {
+  border-bottom: none;
+}
+
+/* each dive in names repetition list item */
+.names-list div {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+}
