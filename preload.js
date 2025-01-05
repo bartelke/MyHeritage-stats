@@ -1,9 +1,5 @@
-const familyMgr = require("./DB/family.js");
-const { contextBridge } = require("electron");
+const { contextBridge, ipcRenderer } = require("electron");
 
-const getNamesRep = () => {
-  return familyMgr.countNamesRepetition();
-};
-contextBridge.exposeInMainWorld("api", {
-  getNamesRepetition: getNamesRep,
+contextBridge.exposeInMainWorld("electron", {
+  invoke: (channel, ...args) => ipcRenderer.invoke(channel, ...args),
 });

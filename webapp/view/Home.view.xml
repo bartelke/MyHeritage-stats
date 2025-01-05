@@ -1,0 +1,48 @@
+<mvc:View
+	controllerName="sap.ui.demo.basicTemplate.controller.Home"
+	displayBlock="true"
+	xmlns:uxap="sap.uxap"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<uxap:ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+		<uxap:headerTitle>
+			<uxap:ObjectPageHeader objectTitle="{i18n>title}">
+			</uxap:ObjectPageHeader>
+		</uxap:headerTitle>
+
+		<uxap:headerContent>
+			<!-- <ObjectAttribute title="" text="This example explains the rules for the rendering of sections"/> -->
+		</uxap:headerContent>
+
+		<uxap:sections>
+			<uxap:ObjectPageSection titleUppercase="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="{i18n>namesRep}" titleUppercase="false">
+						<List
+							id="namesRepList"
+							headerText="{i18n>namesRep}"
+							items="{
+								path: 'namesRepModel>/'
+							}" >
+							<StandardListItem
+								title="{namesRepModel>first_name}"
+								counter="{namesRepModel>occurrences}"/>
+							</List>
+					</uxap:ObjectPageSubSection>
+					
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+
+			<uxap:ObjectPageSection titleUppercase="false" title="Section 2">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Subsection 1.1" titleUppercase="false">
+						<Text text="sekcja2"/>
+					</uxap:ObjectPageSubSection>
+					
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+
+		</uxap:sections>
+
+	</uxap:ObjectPageLayout>
+</mvc:View>
