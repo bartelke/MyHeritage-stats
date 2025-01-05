@@ -1,0 +1,27 @@
+specVersion: "2.3"
+metadata:
+  name: my-electron-app
+type: application
+
+resources:
+  configuration:
+    paths:
+      webapp: webapp
+
+builder:
+  resources:
+    excludes:
+      - "/test/**"
+      - "/localService/**"
+      - "/**/*.md"
+      - "/**/LICENSE.txt"
+      - "/**/test/**"
+
+framework:
+  name: OpenUI5
+  version: "1.113.0" # Dopasuj wersję do swoich potrzeb
+  libraries:
+    - name: sap.ui.core
+    - name: sap.m
+    - name: sap.ui.layout
+    - name: themelib_sap_belize

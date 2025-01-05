@@ -1,21 +1,45 @@
-const { app, BrowserWindow } = require("electron");
+const electron = require("electron");
+const { app, BrowserWindow, Menu } = require("electron");
 const path = require("path");
 
-const createWindow = () => {
-  const win = new BrowserWindow({
-    width: 1280,
-    height: 720,
+const template = [
+  {
+    label: "Help",
+    submenu: [
+      { role: "undo" },
+      { role: "redo" },
+      { type: "separator" },
+      { role: "cut" },
+      { role: "copy" },
+      { role: "paste" },
+      { role: "pasteandmatchstyle" },
+      { role: "delete" },
+      { role: "selectall" },
+    ],
+  },
+];
+
+const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menu);
+
+let win;
+
+app.on("ready", () => {
+  win = new BrowserWindow({
+    show: false,
     webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
-      nodeIntegration: true,
-      enableRemoteModule: true,
-      frame: false,
+      nodeIntegration: false,
     },
   });
-  win.webContents.openDevTools();
-  win.loadFile("index.html");
-};
 
-app.whenReady().then(() => {
-  createWindow();
+  win.on("closed", () => {
+    win = null;
+  });
+
+  win.once("ready-to-show", () => {
+    win.show();
+    win.webContents.openDevTools(); // Otwiera konsolę deweloperską
+  });
+
+  win.loadFile("dist/index.html");
 });
