@@ -1,7 +1,9 @@
 ﻿# MyHeritage stats
 
 Main goal of this app is to get some statistics of your ancestors, eg how old was the youngest woman who got married, how was biggest age difference in marriage, who had the biggest number of children etc.
-This project aims to develop desktop application with Electron that can connect to your SQLite MyHeritage database (simply change the extension of your MyHeritage local app DB) and enables you to see a lot of statistics with plenty filters
+This project aims to develop desktop application with Electron that can connect to your SQLite MyHeritage database (simply change the extension of your MyHeritage local app DB) and enables you to see a lot of statistics with plenty filters.
+
+The application was made with Open UI5 framework.
 
 ## How to use
 
@@ -10,6 +12,18 @@ Simply change the extension of your local MyHeritage database from .ftb to .sqli
 ```
 const dbPath = path.resolve(__dirname, "../[your DB name].sqlite");
 ```
+
+Build application with the following command [UI5-cli](https://sap.github.io/ui5-tooling/v3/pages/CLI/) needed):
+```
+ui5 build --all
+```
+
+You can run it with:
+```
+npm start
+```
+
+You can also create an installer for Windows with [Electron Builder](https://github.com/electron-userland/electron-builder)
 
 ## Versions and Further Development
 
