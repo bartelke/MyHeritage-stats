@@ -19,7 +19,7 @@ builder:
 
 framework:
   name: OpenUI5
-  version: "1.113.0" # Dopasuj wersję do swoich potrzeb
+  version: "1.113.0"
   libraries:
     - name: sap.ui.core
     - name: sap.m

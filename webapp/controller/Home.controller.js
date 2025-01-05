@@ -7,6 +7,9 @@ sap.ui.define(
       formatter: formatter,
 
       onInit: function () {},
+      onTest: function () {
+        console.log("d0pa");
+      },
     });
   }
 );
