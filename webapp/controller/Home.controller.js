@@ -6,9 +6,21 @@ sap.ui.define(
     return Controller.extend("sap.ui.demo.basicTemplate.controller.App", {
       formatter: formatter,
 
-      onInit: function () {},
-      onTest: function () {
-        console.log("d0pa");
+      onInit: function () {
+        this.callNamesRepetiton();
+      },
+      callNamesRepetiton: async function () {
+        try {
+          // call method
+          const data = await window.electron.invoke("countNamesRepetition");
+
+          console.log("Data from Electron:", data);
+
+          const oModel = this.getView().getModel("namesRepModel");
+          oModel.setData(data);
+        } catch (error) {
+          console.error("Error fetching data from Electron:", error);
+        }
       },
     });
   }
